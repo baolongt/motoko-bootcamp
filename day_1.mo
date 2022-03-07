@@ -81,18 +81,19 @@ actor {
     // Challenge 10 :
     public func selection_sort (arr : [Nat]) : async [Nat]{
         var new_arr : [var Nat] = Array.thaw(arr);
-        var temp = 0;
-        var min_index = 0;
-        for(i in Iter.range(0, new_arr.size()-1)){
-            min_index := i;
-            for(j in Iter.range(i+1, new_arr.size()-1)){
-                if(new_arr[j] < new_arr[i]){
+        var size = new_arr.size();
+        for(i in Iter.range(0, size-1)){
+            var min_index = i;
+            for(j in Iter.range(i+1, size-1)){
+                if(new_arr[j] < new_arr[min_index]){
                     min_index := j;
                 };
             };
-            temp := new_arr[i];
-            new_arr[i] := new_arr[min_index];
-            new_arr[min_index] := new_arr[i];
+            if(min_index != i){
+                var temp = new_arr[i];
+                new_arr[i] := new_arr[min_index];
+                new_arr[min_index] := temp;
+            }
         };
         return Array.freeze(new_arr);
     };
