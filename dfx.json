@@ -1,18 +1,15 @@
 {
 	"canisters": {
-		"bootcamp_day1": {
-			"main": "src/bootcamp_day1/main.mo",
+		"day_02": {
+			"main": "src/day_02/main.mo",
 			"type": "motoko"
 		},
-		"bootcamp_day1_assets": {
-			"dependencies": ["bootcamp_day1"],
+		"day_02_assets": {
+			"dependencies": ["day_02"],
 			"frontend": {
-				"entrypoint": "src/bootcamp_day1_assets/src/index.html"
+				"entrypoint": "src/day_02_assets/src/index.html"
 			},
-			"source": [
-				"src/bootcamp_day1_assets/assets",
-				"dist/bootcamp_day1_assets/"
-			],
+			"source": ["src/day_02_assets/assets", "dist/day_02_assets/"],
 			"type": "assets"
 		}
 	},
@@ -22,7 +19,7 @@
 			"packtool": ""
 		}
 	},
-	"dfx": "0.8.4",
+	"dfx": "0.9.2",
 	"networks": {
 		"local": {
 			"bind": "127.0.0.1:8000",
