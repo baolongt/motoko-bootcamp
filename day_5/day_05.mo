@@ -10,7 +10,7 @@ actor {
   };
 
   // challenge 2
-  let var favoriteNumber = HashMap.HashMap<Principal, Nat>(0, Principal.equal, Principal.hash);
+  let favoriteNumber = HashMap.HashMap<Principal, Nat>(0, Principal.equal, Principal.hash);
 
   // challenge 3 + 4
   public shared({caller}) func add_favorite_number(n : Nat) : async Text{
